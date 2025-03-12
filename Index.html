@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DATOS/css/style.css">
+    <link rel="icon" href="DATOS/img/flowers.png" type="image/x-icon">
+    <title>FLORES</title>
+    <style>
+        /* Fondo romántico con gradiente */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff7eb9, #ff65a3, #ff3385); /* Gradiente rosa */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite; /* Animación de gradiente */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animación del fondo */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Estilo para las estrellas subiendo */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: starAnimation 5s infinite;
+        }
+
+        @keyframes starAnimation {
+            0% {
+                transform: translateY(100vh) scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Generar múltiples estrellas */
+        .star:nth-child(odd) {
+            animation-duration: 6s;
+            animation-delay: 0s;
+        }
+
+        .star:nth-child(even) {
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(3) {
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+
+        /* Estilos para los elementos de la carta */
+        .greetings {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .button {
+            margin-top: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .button button {
+            padding: 10px 20px;
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .button button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button button:hover {
+            background-color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <!-- Estrellas generadas por JavaScript -->
+    <script>
+        for (let i = 0; i < 50; i++) {
+            let star = document.createElement('div');
+            star.classList.add('star');
+            let size = Math.random() * 6 + 4;  // Tamaño de las estrellas (más grandes)
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + 'vw'; // Posición horizontal
+            star.style.animationDuration = Math.random() * 5 + 3 + 's'; // Duración de la animación
+            star.style.animationDelay = Math.random() * 5 + 's'; // Retraso de la animación
+            document.body.appendChild(star);
+        }
+    </script>
+
+    <div class="greetings">
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+        <span></span>
+    </div>
+    <div class="greetings">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="description">
+        <span>QUE TENGAS UNA LINDA NOCHE ❤️</span>
+    </div>
+    <div class="button">
+        <button>
+            <a href="DATOS/FLORES.html">CLICK AQUÍ</a>
+        </button>
+    </div>
+</body>
+</html>
